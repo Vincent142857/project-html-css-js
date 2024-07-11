@@ -7,7 +7,7 @@ const search = document.getElementById("search");
 const url = (city) => `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
 
 async function getWeatherByLocation(city) {
-  const resp = await fetch(url(city), { origin: "cros" });
+  const resp = await fetch(url(city), { origin: "cors" });
   const respData = await resp.json();
   console.log(respData);
 
@@ -20,8 +20,11 @@ function addWeatherToPage(data) {
   const weather = document.createElement("div");
   weather.classList.add("weather");
   weather.innerHTML = `
-        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
-        <small>${data.weather[0].main}</small>
+    <h2>
+      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C
+      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
+    </h2>
+    <small>${data.weather[0].main}</small>
     `;
 
   // cleanup
