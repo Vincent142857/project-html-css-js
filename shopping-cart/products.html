@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/product.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Flower Shop</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="products.html">Product</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-left" id="formSearch">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">
+                        <i class="glyphicon glyphicon-shopping-cart cart-icon" data-toggle="modal" data-target="#cart">
+                            <b><span class="total-count badge cart-badge"></span></b>
+                        </i></a>
+                    </li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+
+        <div class="page-header">
+            <h1 style="padding-top: 2rem;">Products </h1>
+        </div>
+
+        <!--main content-->
+        <div class="row">
+            <div class="col-sm-2 v-menu">
+                <h3>Categories</h3>
+                <hr>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="lotus" class="chk-cake" name="cat">
+                        Lotus
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="orchid" class="chk-cake" name="cat">
+                        Orchid
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="rose" class="chk-cake" name="cat">
+                        Rose
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="sun" class="chk-cake" name="cat">
+                        Sun
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="row" id="products">
+
+                    <div class="col-sm-6 col-md-4 divImage">
+                        <img src="image/sun.jpg" alt="" class="flowerImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end main content-->
+        
+         <!-- Modal cart-->
+        <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <table class="show-cart table">
+                    
+                </table>
+                <h3>Total price: $<span class="total-cart"></span></h3>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Order now</button>
+                </div>
+            </div>
+            </div>
+        </div> 
+
+
+        <div class="panel-footer" style="text-align: center;">
+            Copyright &copy; by ABC Team - November, 2020
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

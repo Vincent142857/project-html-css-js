@@ -46,7 +46,6 @@ function generatePassword() {
     password += getSymbol();
   }
 
-
   for (let i = password.length; i < len; i++) {
     const x = generateX();
     password += x;

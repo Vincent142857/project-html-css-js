@@ -1,0 +1,54 @@
+body{
+    margin-left: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: black 2px -2px 2px;
+    text-align: left;
+    color: lightgray;
+    font-size: 2em;
+    text-indent: 95px;
+}
+
+table {
+    width: 90%;
+    border: maroon solid thin;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+    box-shadow: 3px 3px 2px lightgrey;
+
+    border-spacing: 2px 0px;
+}
+
+td {
+    padding: 0px 1px;
+    vertical-align: middle;
+}
+
+img {
+    width: 100%;
+    min-height: auto;
+    min-width: auto;
+
+}
+.logo {
+    background-image: url("../image/logo.jpg");
+    background-repeat: no-repeat;
+    border-bottom: groove grey medium;
+}
+
+p#menu{
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: black;
+    text-transform: uppercase;
+}
+a {
+    text-decoration: none;
+    padding-right: 1em;
+    color: black;        
+}

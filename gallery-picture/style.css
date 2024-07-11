@@ -1,0 +1,52 @@
+body {
+  background-color: antiquewhite;
+}
+/* Setting up a Grid*/
+/* Create a 1x1 grid, with a single cell named stack*/
+.stack {
+  display: grid;
+  grid-template-areas: "stack";
+  width: 12rem;
+  height: 12rem;
+}
+
+/* place all the images in the same cell, so that they overlap*/
+
+/*Styling each photo*/
+.stack > img {
+  grid-area: stack;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+
+  box-shadow: 0 0 0.5rem rgb(0, 0, 0 / .2);
+
+  border: 0.5rem solid white;
+  border-bottom: 2rem solid white;
+  border-radius: 0.5rem;
+
+  transition: transform 200ms;
+}
+
+/*A little bit of randomness */
+.stack > img:nth-child(1) {
+  transform: rotate(5deg) translateX(1.25rem) translateY(-1.25rem);
+}
+.stack > img:nth-child(2) {
+  transform: rotate(-10deg) translateX(-1.25rem);
+}
+.stack > img:nth-child(3) {
+  transform: rotate(0deg);
+}
+
+/* Add move movement during hover*/
+.stack:hover > img:nth-child(1) {
+  transform: rotate(10deg) translateX(2.5rem) translateY(-2.5rem);
+}
+.stack:hover > img:nth-child(2) {
+  transform: rotate(-20deg) translateX(-3.75rem);
+}
+.stack:hover > img:nth-child(3) {
+  transform: rotate(0deg);
+}
+

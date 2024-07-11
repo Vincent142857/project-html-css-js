@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>contact</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<style>
+		h2 {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			text-shadow: darkgray 2px 2px 2px;
+			text-align: left;
+			color: red;
+		}
+		form{
+			width: 90%;
+		}
+
+
+
+		/* input[type="text"],
+		input[type="email"],
+		select {
+			margin: .2em;
+			padding: .2em;
+			width: 200px;
+			font-size: 1.1em;
+		} */
+
+
+		input:required {
+			border-bottom: thin solid palevioletred;
+			border-top: thin dotted gray;
+			border-right: thin dotted gray;
+			border-left: thin dotted gray;
+		}
+
+		/* span {
+			font-size: 1.3em;
+			color: red;
+			margin-left: -.2em;
+		} */
+	</style>
+</head>
+
+<body>
+	<div class="container">
+
+		<!-- khoi menu -->
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Flower Shop</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="products.html">Product</a></li>
+				</ul>
+
+				<!-- <form class="navbar-form navbar-left" id="formSearch">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" id="search" name="search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form> -->
+
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="#">Contact us</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+		<!-- ket thuc khoi menu -->
+
+
+		<div class="panel panel-success">
+
+			<div class="panel-heading" style="padding-top: 7rem;">
+				<h2 class="panel-title">Contact us</h2>
+			</div>
+
+			<div class="panel-body">
+
+				<div class="row">
+
+
+					<div class="col-md-4">
+						<form action="" method="get">
+
+							<legend>Your Details</legend>
+
+							<div class="form-group">
+								<label for="">Name</label>
+								<input type="text" class="form-control" id="" placeholder="Input name" required>
+							</div>
+
+							<div class="form-group">
+								<label for="">Email</label>
+								<input type="email" class="form-control" id="" placeholder="Input email" required>
+							</div>
+
+
+
+							<legend>Your Review</legend>
+							<div class="form-group">
+								How did you hear about us?
+								<select name="referrer" id="hear-about" class="form-control">
+									<option value="google">Google</option>
+									<option value="friend">Friend</option>
+									<option value="advert">Advert</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								Would you visit again?
+								<label class="radio-inline">
+									<input type="radio" name="optradio" checked value="yes">Yes
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio" value="no">No
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="optradio" value="maybe">Maybe
+								</label>
+							</div>
+
+							<div class="form-group">
+								<label for="comments">Comments:</label>
+								<textarea rows="4"  id="comments" class="form-control"></textarea>
+							</div>
+
+
+							<div class="form-group">
+								<label class="checkbox-inline">
+									<input type="checkbox" name="subscribe" value="yes" checked>Sign me up for email
+									updates
+								</label>
+
+							</div>
+							<div>
+								<button type="submit" class="btn btn-danger">Submit review</button>
+								<button type="reset" class="btn btn-success">Reset</button>
+							</div>
+
+						</form>
+
+					</div>
+					<div class="col-md-8">
+						<img src="image/noel2.png" alt=""> <br> <br>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3193500366883!2d106.66408561394566!3d10.786834792314448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed2392c44df%3A0xd2ecb62e0d050fe9!2sFPT-Aptech%20Computer%20Education%20HCM!5e0!3m2!1sen!2s!4v1605550165904!5m2!1sen!2s" width="95%" height="300px" frameborder="1" style="border:1;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+        <div class="panel-footer" style="text-align: center;">
+            Copyright &copy; by ABC
+        </div>
+	</div>
+
+
+
+</body>
+
+</html>

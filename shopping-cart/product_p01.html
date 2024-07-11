@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 3 - JSON</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/product.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- start menu -->
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Flower Shop</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Product</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">
+                        <i class="glyphicon glyphicon-shopping-cart cart-icon" data-toggle="modal" data-target="#cart">
+                            <b><span class="total-count badge cart-badge"></span></b>
+                        </i></a>
+                    </li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+        <!-- end menu -->
+
+
+    <div class="page-header">
+        <h1 style="padding-top: 2rem;">Product Detail </h1>
+    </div>
+
+    <!-- main content -->
+    <div class="row" id="productDetail">
+
+        <!-- <div class="col-sm-6 col-md-4 divImage">
+            <img src="image/rose.jpg" alt="" class="cakeImage">
+        </div> -->
+
+    </div>
+    <!-- end main content -->
+
+    <!-- Modal cart-->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <table class="show-cart table">
+                
+            </table>
+            <h3>Total price: $<span class="total-cart"></span></h3>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Order now</button>
+            </div>
+        </div>
+        </div>
+    </div> 
+
+    <!-- footer -->
+    <div class="panel-footer" style="text-align: center;">
+        Copyright &copy; by T1.2103.M0 - June, 2021
+    </div>
+</div>
+
+    <!-- Compiled and minified jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/product.js"> </script>
+    
+    <script>
+        showProduct("p01");
+    </script>
+    
+    <script src="js/cart.js"></script>
+</body>
+</html>
