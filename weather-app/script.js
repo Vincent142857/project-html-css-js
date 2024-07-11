@@ -37,12 +37,12 @@ function KtoC(K) {
   return Math.floor(K - 273.15);
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const city = search.value;
 
   if (city) {
-    getWeatherByLocation(city);
+    await getWeatherByLocation(city);
   }
 });
