@@ -4,7 +4,7 @@
 
 let shoppingCart = (function () {
   // =============================
-  // Private methods and propeties
+  // Private methods and properties
   // =============================
   let cart = [];
 
@@ -32,7 +32,7 @@ let shoppingCart = (function () {
 
 
   // =============================
-  // Public methods and propeties
+  // Public methods and properties
   // =============================
   let obj = {};
 
@@ -64,7 +64,7 @@ let shoppingCart = (function () {
       if (cart[i].name === name) {
         cart[i].count--;
         if (cart[i].count === 0) {
-          cart.splice(i, 1);
+          cart.splice(Number(i), 1);
         }
         break;
       }
@@ -76,7 +76,7 @@ let shoppingCart = (function () {
   obj.removeItemFromCartAll = function (name) {
     for (let i in cart) {
       if (cart[i].name === name) {
-        cart.splice(i, 1);
+        cart.splice(Number(i), 1);
         break;
       }
     }
@@ -160,24 +160,26 @@ $('.clear-cart').click(function () {
 function displayCart() {
   let cartArray = shoppingCart.listCart();
   let output = `<tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th> </th>
-                    <th>Total</th>
-                  </tr>`;
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th> </th>
+                  <th>Total</th>
+                </tr>`;
 
   $.each(cartArray, function (k, v) {
 
     output += `<tr>
                 <td>${v.name.toUpperCase()}</td>
                 <td>${v.price}</td>
-                <td><div class='input-group'><span class='minus-item input-group-addon btn btn-primary' data-name="${v.name}">-</span>
-                    <input type='number' class='item-count form-control' data-name="${v.name}" value="${v.count}">
-                    <span class='plus-item input-group-addon btn btn-primary' data-name="${v.name}">+</span></div></td>
+                <td><div class='input-group'>
+                  <span class='minus-item input-group-addon btn btn-primary' data-name="${v.name}">-</span>
+                  <input type='number' class='item-count form-control' data-name="${v.name}" value="${v.count}">
+                  <span class='plus-item input-group-addon btn btn-primary' data-name="${v.name}">+</span>
+                </div></td>
                 <td><button class='delete-item btn btn-danger' data-name="${v.name}">X</button></td>
                 <td>${v.total}</td>
-                </tr>`
+              </tr>`
 
   });
   /*for(let i in cartArray) {
@@ -191,6 +193,7 @@ function displayCart() {
               <td>${cartArray[i].total}</td>
               </tr>`
   }*/
+
   $('.show-cart').html(output);
   $('.total-cart').html(shoppingCart.totalCart());
   $('.total-count').html(shoppingCart.totalCount());
@@ -201,7 +204,7 @@ $('.show-cart').on("click", ".delete-item", function (event) {
   let name = $(this).data('name');
   shoppingCart.removeItemFromCartAll(name);
   displayCart();
-})
+});
 
 
 // -1
@@ -209,13 +212,14 @@ $('.show-cart').on("click", ".minus-item", function (event) {
   let name = $(this).data('name');
   shoppingCart.removeItemFromCart(name);
   displayCart();
-})
+});
+
 // +1
 $('.show-cart').on("click", ".plus-item", function (event) {
   let name = $(this).data('name');
   shoppingCart.addItemToCart(name);
   displayCart();
-})
+});
 
 // Item count input
 $('.show-cart').on("change", ".item-count", function (event) {
