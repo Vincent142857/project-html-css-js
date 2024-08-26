@@ -54,10 +54,15 @@ function loadQuiz() {
 
   const currentQuizData = quizData[currentQuiz];
 
+  // @ts-ignore
   questionEl.innerText = currentQuizData.question;
+  // @ts-ignore
   a_text.innerText = currentQuizData.a;
+  // @ts-ignore
   b_text.innerText = currentQuizData.b;
+  // @ts-ignore
   c_text.innerText = currentQuizData.c;
+  // @ts-ignore
   d_text.innerText = currentQuizData.d;
 }
 
@@ -65,6 +70,7 @@ function getSelected() {
   let answer = undefined;
 
   answerEls.forEach((answerEl) => {
+    // @ts-ignore
     if (answerEl.checked) {
       answer = answerEl.id;
     }
@@ -75,10 +81,12 @@ function getSelected() {
 
 function deselectAnswers() {
   answerEls.forEach((answerEl) => {
+    // @ts-ignore
     answerEl.checked = false;
   });
 }
 
+// @ts-ignore
 submitBtn.addEventListener('click', () => {
   // check to see the answer
   const answer = getSelected();
@@ -92,9 +100,9 @@ submitBtn.addEventListener('click', () => {
     if (currentQuiz < quizData.length) {
       loadQuiz();
     } else {
+      // @ts-ignore
       quiz.innerHTML = `
         <h2>You answered correctly at ${score}/${quizData.length} questions</h2>
-
         <button onclick="location.reload()">Reload</button>
       `;
     }

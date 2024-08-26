@@ -5,26 +5,30 @@ const sizeEl = document.getElementById('size');
 const colorEl = document.getElementById('color');
 const clearEl = document.getElementById('clear');
 
+// @ts-ignore
 const ctx = canvas.getContext('2d');
 
 let size = 30;
 let isPressed = false;
 let color = "black";
-let x = undefined;
-let y = undefined;
+let x;
+let y;
 
+// @ts-ignore
 canvas.addEventListener('mousedown', (e) => {
   isPressed = true;
   x = e.offsetX;
   y = e.offsetY;
 });
 
+// @ts-ignore
 canvas.addEventListener('mouseup', (e) => {
   isPressed = false;
   x = undefined;
   y = undefined;
 });
 
+// @ts-ignore
 canvas.addEventListener('mousemove', (e) => {
   if (isPressed) {
     const x2 = e.offsetX;
@@ -52,6 +56,7 @@ function drawLine(x1, y1, x2, y2) {
   ctx.stroke();
 }
 
+// @ts-ignore
 increaseBtn.addEventListener('click', () => {
   size += 5;
   if (size > 50) {
@@ -60,6 +65,7 @@ increaseBtn.addEventListener('click', () => {
   updateSizeOnScreen();
 })
 
+// @ts-ignore
 decreaseBtn.addEventListener('click', () => {
   size -= 5;
   if (size < 5) {
@@ -68,14 +74,19 @@ decreaseBtn.addEventListener('click', () => {
   updateSizeOnScreen();
 });
 
+// @ts-ignore
 colorEl.addEventListener('change', (e) => {
+  // @ts-ignore
   color = e.target.value;
 });
 
+// @ts-ignore
 clearEl.addEventListener('click', () => {
+  // @ts-ignore
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 function updateSizeOnScreen() {
+  // @ts-ignore
   sizeEl.innerText = size;
 }

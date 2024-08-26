@@ -22,7 +22,7 @@ let shoppingCart = (function () {
 
   // Load cart
   function loadCart() {
-    cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+    cart = JSON.parse(sessionStorage.getItem('shoppingCart') || "");
   }
 
 
@@ -142,15 +142,19 @@ let shoppingCart = (function () {
 // Triggers / Events
 // *****************************************
 // Add item
+// @ts-ignore
 $('.add-to-cart').click(function (event) {
   event.preventDefault();
+  // @ts-ignore
   let name = $(this).data('name');
+  // @ts-ignore
   let price = Number($(this).data('price'));
   shoppingCart.addItemToCart(name, price, 1);
   displayCart();
 });
 
 // Clear items
+// @ts-ignore
 $('.clear-cart').click(function () {
   shoppingCart.clearCart();
   displayCart();
@@ -167,6 +171,7 @@ function displayCart() {
                   <th>Total</th>
                 </tr>`;
 
+  // @ts-ignore
   $.each(cartArray, function (k, v) {
 
     output += `<tr>
@@ -194,13 +199,18 @@ function displayCart() {
               </tr>`
   }*/
 
+  // @ts-ignore
   $('.show-cart').html(output);
+  // @ts-ignore
   $('.total-cart').html(shoppingCart.totalCart());
+  // @ts-ignore
   $('.total-count').html(shoppingCart.totalCount());
 }
 
 // Delete item button
+// @ts-ignore
 $('.show-cart').on("click", ".delete-item", function (event) {
+  // @ts-ignore
   let name = $(this).data('name');
   shoppingCart.removeItemFromCartAll(name);
   displayCart();
@@ -208,22 +218,29 @@ $('.show-cart').on("click", ".delete-item", function (event) {
 
 
 // -1
+// @ts-ignore
 $('.show-cart').on("click", ".minus-item", function (event) {
+  // @ts-ignore
   let name = $(this).data('name');
   shoppingCart.removeItemFromCart(name);
   displayCart();
 });
 
 // +1
+// @ts-ignore
 $('.show-cart').on("click", ".plus-item", function (event) {
+  // @ts-ignore
   let name = $(this).data('name');
   shoppingCart.addItemToCart(name);
   displayCart();
 });
 
 // Item count input
+// @ts-ignore
 $('.show-cart').on("change", ".item-count", function (event) {
+  // @ts-ignore
   let name = $(this).data('name');
+  // @ts-ignore
   let count = Number($(this).val());
   shoppingCart.setCountForItem(name, count);
   displayCart();

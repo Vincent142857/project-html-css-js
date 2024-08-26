@@ -1,12 +1,14 @@
 const apikey = "0ecf956d4ae1984d84c0b3bb51b979f0";
 
 const main = document.getElementById("main");
+// @ts-ignore
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
 const url = (city) => `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
 
 async function getWeatherByLocation(city) {
+  // @ts-ignore
   const resp = await fetch(url(city), { origin: "cors" });
   const respData = await resp.json();
   console.log(respData);
@@ -26,10 +28,9 @@ function addWeatherToPage(data) {
     </h2>
     <small>${data.weather[0].main}</small>
     `;
-
-  // cleanup
+  // @ts-ignore
   main.innerHTML = "";
-
+  // @ts-ignore
   main.appendChild(weather);
 }
 
@@ -37,11 +38,11 @@ function KtoC(K) {
   return Math.floor(K - 273.15);
 }
 
+// @ts-ignore
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
+  // @ts-ignore
   const city = search.value;
-
   if (city) {
     await getWeatherByLocation(city);
   }

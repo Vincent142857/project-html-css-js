@@ -30,18 +30,23 @@ function getSymbol() {
 }
 
 function generatePassword() {
+  // @ts-ignore
   const len = lenEl.value;
   let password = '';
 
+  // @ts-ignore
   if (upperEl.checked) {
     password += getUppercase();
   }
+  // @ts-ignore
   if (lowerEl.checked) {
     password += getLowercase();
   }
+  // @ts-ignore
   if (numberEl.checked) {
     password += getNumber();
   }
+  // @ts-ignore
   if (symbolEl.checked) {
     password += getSymbol();
   }
@@ -50,24 +55,29 @@ function generatePassword() {
     const x = generateX();
     password += x;
   }
+  // @ts-ignore
   pwEl.innerText = password;
 }
 
 function generateX() {
   const xs = [];
 
+  // @ts-ignore
   if (upperEl.checked) {
     xs.push(getUppercase());
   }
 
+  // @ts-ignore
   if (lowerEl.checked) {
     xs.push(getLowercase());
   }
 
+  // @ts-ignore
   if (numberEl.checked) {
     xs.push(getNumber());
   }
 
+  // @ts-ignore
   if (symbolEl.checked) {
     xs.push(getSymbol());
   }
@@ -77,10 +87,13 @@ function generateX() {
   return xs[Math.floor(Math.random() * xs.length)];
 }
 
+// @ts-ignore
 generateEl.addEventListener('click', generatePassword);
 
+// @ts-ignore
 copyEl.addEventListener('click', () => {
   const textarea = document.createElement('textarea');
+  // @ts-ignore
   const password = pwEl.innerText;
 
   if (!password) {

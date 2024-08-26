@@ -1,6 +1,6 @@
 var data = [
     {"id":"p01","name":"lotus pink", "pic":"lotus_pink.jpg","price":100,"description":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea at porro, minus, neque rerum incidunt cumque voluptate eum officiis nesciunt veritatis accusamus est temporibus aperiam deserunt nobis perferendis! Reiciendis, dolores?", "cat":"lotus"},
-    
+
     {"id":"p02","name":"lotus white", "pic":"lotus_white.jpg","price":150, "description":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea at porro, minus, neque rerum incidunt cumque voluptate eum officiis nesciunt veritatis accusamus est temporibus aperiam deserunt nobis perferendis! Reiciendis, dolores?","cat":"lotus"},
 
     {"id":"p11","name":"orchid purple", "pic":"orchid_purple.jpg","price":123,"description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloribus facere aliquam amet obcaecati, eos quasi, unde quas odio ab cum fugit nesciunt harum earum quae, dolore excepturi provident? Ullam.Nihil magnam praesentium accusantium eligendi? Voluptatum impedit, quidem reprehenderit, itaque hic amet iure sapiente, velit dolor ratione quo eaque consequatur corporis cum iste voluptates nam dolore ipsam. Excepturi, obcaecati iusto!", "cat":"orchid"},
@@ -32,9 +32,11 @@ var data = [
 displayImages(data);
 
 //lap trinh su kien search
+// @ts-ignore
 $("#formSearch").submit(function (e) {
     e.preventDefault();
 
+    // @ts-ignore
     let search = $("#search").val();
     let re = new RegExp(search, "ig");
     let subdata = data.filter(item => item.name.search(re) >= 0);
@@ -64,12 +66,14 @@ function showProduct(pid){
                     <p>${product.description}</p>
                 </div>
                 <a href="#" data-name="${product.name}" data-price="${product.price}" class="add-to-cart btn btn-primary">Add to cart</a>
-            </div>         
+            </div>
         `;
+    // @ts-ignore
     $("#productDetail").html(x);
 }
 
 //lap trinh su kien click chon loai san pham
+// @ts-ignore
 $("input[type=checkbox]").click(function () {
 
     // var cats =
@@ -81,10 +85,11 @@ $("input[type=checkbox]").click(function () {
     // cats = cats.toString().trim();
     //alert("checkbox");
 
+    // @ts-ignore
     let cats = $(".chk-cake:checked").map(function () { return $(this).val() }).toArray().toString();
-    
+
     let subdata = (cats.length==0)?data: data.filter(item => cats.search(item.cat) >= 0);
-    
+
     displayImages(subdata);
 
 });
@@ -92,7 +97,8 @@ $("input[type=checkbox]").click(function () {
 
 function displayImages(items) {
     let s = ``;
-	
+
+	// @ts-ignore
 	$.each(items, function (k, v) {
 
         s += `<div class="col-sm-6 col-md-4 divImage">
@@ -105,7 +111,8 @@ function displayImages(items) {
             </div>`;
 
     });
-    
 
+
+    // @ts-ignore
     $("#products").html(s);
 }
