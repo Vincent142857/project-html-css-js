@@ -1,4 +1,4 @@
-let c = document.getElementById("Canvas");
+let c = document.getElementById("canvas");
 let ctx = c.getContext("2d");
 
 let cWidth, cHeight;
@@ -7,11 +7,12 @@ let pass = [];
 
 let colors = ['#FF5252', '#FF4081', '#E040FB', '#7C4DFF', '#536DFE', '#448AFF', '#40C4FF', '#18FFFF', '#64FFDA', '#69F0AE', '#B2FF59', '#EEFF41', '#FFFF00', '#FFD740', '#FFAB40', '#FF6E40'];
 
-window.onresize = function () { reset(); }
+window.onresize = function () {
+  reset();
+}
 reset();
 
 function reset() {
-
   cWidth = window.innerWidth;
   cHeight = window.innerHeight;
   c.width = cWidth;
@@ -19,7 +20,6 @@ function reset() {
 }
 
 function newShell() {
-
   let left = (Math.random() > 0.5);
   let shell = {};
   shell.x = (1 * left);
@@ -33,11 +33,9 @@ function newShell() {
 }
 
 function newPass(shell) {
-
   let pasCount = Math.ceil(Math.pow(shell.size, 2) * Math.PI);
 
   for (let i = 0; i < pasCount; i++) {
-
     let pas = {};
     pas.x = shell.x * cWidth;
     pas.y = shell.y * cHeight;
@@ -58,23 +56,29 @@ function newPass(shell) {
 let lastRun = 0;
 Run();
 function Run() {
-
   let dt = 1;
-  if (lastRun != 0) { dt = Math.min(50, (performance.now() - lastRun)); }
+  if (lastRun != 0) {
+    dt = Math.min(50, (performance.now() - lastRun));
+  }
   lastRun = performance.now();
 
   //ctx.clearRect(0, 0, cWidth, cHeight);
   ctx.fillStyle = "rgba(0,0,0,0.25)";
   ctx.fillRect(0, 0, cWidth, cHeight);
 
-  if ((shells.length < 10) && (Math.random() > 0.96)) { newShell(); }
+  if ((shells.length < 10) && (Math.random() > 0.96)) {
+    newShell();
+  }
 
-  for (let ix in shells) {
+  for (let ix = 0; ix < shells.length; ix++) {
 
     let shell = shells[ix];
 
     ctx.beginPath();
-    ctx.arc(shell.x * cWidth, shell.y * cHeight, shell.size, 0, 2 * Math.PI);
+    ctx.arc(
+      shell.x * cWidth, shell.y * cHeight,
+      shell.size, 0, 2 * Math.PI
+    );
     ctx.fillStyle = shell.color;
     ctx.fill();
 
@@ -85,12 +89,11 @@ function Run() {
 
     if (shell.yOff < -0.005) {
       newPass(shell);
-      shells.splice(ix, 1);
+      shells.splice(Number(ix), 1);
     }
   }
 
   for (let ix in pass) {
-
     let pas = pass[ix];
 
     ctx.beginPath();
@@ -104,8 +107,10 @@ function Run() {
     pas.yOff -= ((pas.yOff + 5) * dt * 0.0005);
     pas.size -= (dt * 0.002 * Math.random())
 
-    if ((pas.y > cHeight) || (pas.y < -50) || (pas.size <= 0)) {
-      pass.splice(ix, 1);
+    if (
+      (pas.y > cHeight) || (pas.y < -50) || (pas.size <= 0)
+    ) {
+      pass.splice(Number(ix), 1);
     }
   }
   requestAnimationFrame(Run);
