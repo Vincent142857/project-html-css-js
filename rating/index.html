@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rating star</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .star {
+      font-size: 2rem;
+      color: gray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .star.selected {
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rating">
+    <span class="star">&#9733;</span>
+    <span class="star">&#9733;</span>
+    <span class="star">&#9733;</span>
+    <span class="star">&#9733;</span>
+    <span class="star">&#9733;</span>
+  </div>
+  <script>
+    const stars = document.querySelectorAll('.star');
+    let rating = 0;
+    stars.forEach((star, index) => {
+      star.addEventListener('click', () => {
+        rating = index + 1;
+        stars.forEach((s, i) => {
+          s.classList.toggle('selected', i < rating);
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
